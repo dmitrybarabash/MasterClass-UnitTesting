@@ -1,7 +1,7 @@
-﻿using NUnit.Framework;
-using Life;
+﻿using Life;
+using NUnit.Framework;
 
-namespace LifeUnitTests
+namespace Life.Tests
 {
     [TestFixture]
     public class LifeTests
