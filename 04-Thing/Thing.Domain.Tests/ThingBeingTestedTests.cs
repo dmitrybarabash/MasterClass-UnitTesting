@@ -11,7 +11,7 @@ namespace Thing.Domain.Tests
         [Test]
         public void TestUsingRealDependency()
         {
-            var thing = new ThingBeingTested(new ThingDependency());
+            var sut = new ThingBeingTested(new ThingDependency());
 
             // Test code
         }
@@ -36,9 +36,9 @@ namespace Thing.Domain.Tests
                 .Returns(42);
 
             // Create thing being tested with a mock dependency
-            var thing = new ThingBeingTested(mockDependency.Object);
+            var sut = new ThingBeingTested(mockDependency.Object);
 
-            var result = thing.MakeThingPurpose();
+            var result = sut.MakeThingPurpose();
 
             Assert.That("A B = 42", Is.EqualTo(result));
         }
@@ -54,13 +54,13 @@ namespace Thing.Domain.Tests
             var mockDependency = new Mock<IThingDependency>();
 
             // Create thing being tested with a mock dependency
-            var thing = new ThingBeingTested(mockDependency.Object)
+            var sut = new ThingBeingTested(mockDependency.Object)
             {
                 FirstName = "Sarah",
                 LastName = "Smith"
             };
 
-            thing.MakeThingPurpose();
+            sut.MakeThingPurpose();
 
             // Assert that the JoinUpper method was called with Sarah Smith
             mockDependency.Verify(x => x.JoinUpper("Sarah", "Smith"), Times.Once);
@@ -76,7 +76,7 @@ namespace Thing.Domain.Tests
         //{
         //    var mockDependency = new Mock<IFooRepository>();
         //
-        //    var controller = new HomeController(mockDependency.Object);
+        //    var sut = new HomeController(mockDependency.Object);
         //
         //    // Test code
         //}
