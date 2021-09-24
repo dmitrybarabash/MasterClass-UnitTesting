@@ -3,7 +3,6 @@ using FluentAssertions;
 
 namespace FractionLib.Tests.NUnitAndFluentAssertions
 {
-    [TestFixture]
     public class FractionTests
     {
         [Test]

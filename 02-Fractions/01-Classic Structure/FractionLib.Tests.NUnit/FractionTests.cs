@@ -3,7 +3,6 @@ using NUnit.Framework;
 
 namespace FractionLib.Tests.NUnit
 {
-    [TestFixture]
     public class FractionTests
     {
         [Test]

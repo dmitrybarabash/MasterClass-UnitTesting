@@ -7,6 +7,7 @@ namespace PhoneShop
     {
         private readonly IPhoneRepository _phoneRepository;
 
+        // Используем Dependency Injection для внедрения зависимости
         public PhoneShop(IPhoneRepository phoneRepository) =>
             _phoneRepository = phoneRepository;
 

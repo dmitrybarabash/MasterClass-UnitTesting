@@ -3,7 +3,6 @@ using NUnit.Framework;
 
 namespace Thing.Domain.Tests
 {
-    [TestFixture]
     public class Tests
     {
         // To write a test we could use the real ThingDependency.

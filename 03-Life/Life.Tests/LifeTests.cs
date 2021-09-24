@@ -3,7 +3,6 @@ using NUnit.Framework;
 
 namespace Life.Tests
 {
-    [TestFixture]
     public class LifeTests
     {
         [Test]

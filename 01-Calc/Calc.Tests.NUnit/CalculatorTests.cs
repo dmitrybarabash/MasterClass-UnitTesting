@@ -2,7 +2,6 @@
 
 namespace Calc.Tests.NUnit
 {
-    [TestFixture]
     public class CalculatorTests
     {
         [Test]
