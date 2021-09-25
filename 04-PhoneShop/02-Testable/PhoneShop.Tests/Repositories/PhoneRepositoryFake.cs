@@ -5,6 +5,7 @@ using PhoneShop.Repositories;
 
 namespace PhoneShop.Tests.Repositories
 {
+    // Подделка репозитория для тестирования
     public class PhoneRepositoryFake : IPhoneRepository
     {
         private readonly List<Phone> _phones = new()

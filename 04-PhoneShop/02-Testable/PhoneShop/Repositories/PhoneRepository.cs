@@ -4,6 +4,8 @@ using PhoneShop.Model;
 
 namespace PhoneShop.Repositories
 {
+    // Настоящий репозиторий для продакшена.
+    // Настоящий доступ к настоящей БД (например, через EF Core).
     public class PhoneRepository : IPhoneRepository
     {
         public IEnumerable<Phone> GetAll() { throw new NotImplementedException(); }

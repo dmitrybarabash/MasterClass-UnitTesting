@@ -9,8 +9,8 @@ namespace PhoneShop
         {
             Console.WriteLine("Phone Shop Tests Demo");
 
-            var phoneShop = new PhoneShop(new PhoneRepository());
-            if (phoneShop.IsPhoneAvalable("Samsung", "Galaxy S21"))
+            var phoneService = new PhoneService(new PhoneRepository());
+            if (phoneService.IsPhoneAvalable("Samsung", "Galaxy S21"))
                 Console.WriteLine("Gotcha!");
         }
     }
