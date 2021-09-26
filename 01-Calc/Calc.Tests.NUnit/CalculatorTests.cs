@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Collections;
+using NUnit.Framework;
 
 namespace Calc.Tests.NUnit
 {
@@ -37,7 +38,7 @@ namespace Calc.Tests.NUnit
         [TestCase(3, 2, 5)]
         [TestCase(3, 4, 7)]
         [TestCase(5, 6, 11)]
-        public void Add_Plus_ReturnsResult(int a, int b, int sum)
+        public void Add_APlusB_ReturnsExpectedSum(int a, int b, int expected)
         {
             // Arrange
             var calc = new Calculator();
@@ -46,7 +47,7 @@ namespace Calc.Tests.NUnit
             int actual = calc.Add(a, b);
 
             // Assert
-            Assert.That(actual, Is.EqualTo(sum));
+            Assert.That(actual, Is.EqualTo(expected));
         }
 
         [TestCase(2, 2, ExpectedResult = 4)]
@@ -54,7 +55,7 @@ namespace Calc.Tests.NUnit
         [TestCase(3, 2, ExpectedResult = 5)]
         [TestCase(3, 4, ExpectedResult = 7)]
         [TestCase(5, 6, ExpectedResult = 11)]
-        public int Add_Plus_ReturnsSum(int a, int b)
+        public int Add_APlusB_ReturnsSumFromExpectedResult(int a, int b)
         {
             // Arrange
             var calc = new Calculator();
@@ -64,6 +65,34 @@ namespace Calc.Tests.NUnit
 
             // Assert
             return actual;
+        }
+
+        [TestCaseSource(typeof(CalcDataClass), nameof(CalcDataClass.TestCases))]   // Data for Act and Assert
+        public int Add_APlusB_ReturnsExpectedSum_FromTestCaseCollection(int a, int b)
+        {
+            // Arrange
+            var calc = new Calculator();
+
+            // Act
+            int actual = calc.Add(a, b);
+
+            // Assert
+            return actual;
+        }
+    }
+
+    public class CalcDataClass
+    {
+        public static IEnumerable TestCases
+        {
+            get
+            {
+                yield return new TestCaseData(2, 2).Returns(4);
+                yield return new TestCaseData(2, 3).Returns(5);
+                yield return new TestCaseData(3, 2).Returns(5);
+                yield return new TestCaseData(3, 4).Returns(7);
+                yield return new TestCaseData(5, 6).Returns(11);
+            }
         }
     }
 }

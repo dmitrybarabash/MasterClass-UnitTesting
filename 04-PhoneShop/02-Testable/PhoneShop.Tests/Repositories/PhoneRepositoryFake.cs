@@ -19,8 +19,7 @@ namespace PhoneShop.Tests.Repositories
 
         public IEnumerable<Phone> GetAll() => _phones;
 
-        public Phone GetById(int id) =>
-            _phones.Where(p => p.Id == id).SingleOrDefault();
+        public Phone GetById(int id) => _phones.Where(p => p.Id == id).SingleOrDefault();
 
         public void Add(Phone phone) => _phones.Add(phone);
 

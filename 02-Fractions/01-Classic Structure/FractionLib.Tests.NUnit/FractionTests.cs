@@ -73,7 +73,7 @@ namespace FractionLib.Tests.NUnit
         [TestCaseSource(typeof(FractionDataClass), nameof(FractionDataClass.TestCases))]   // Arrange
         public Fraction OperatorPlus_AddTwoFractions(Fraction a, Fraction b)
         {
-            // Act
+            // Act & Assert
             return a + b;
         }
     }
@@ -84,7 +84,6 @@ namespace FractionLib.Tests.NUnit
         {
             get
             {
-                // Assert
                 yield return new TestCaseData(new Fraction(1, 2), new Fraction(1, 2)).Returns(new Fraction(4, 4));
                 yield return new TestCaseData(new Fraction(1, 2), new Fraction(1, 3)).Returns(new Fraction(5, 6));
                 yield return new TestCaseData(new Fraction(1, 3), new Fraction(1, 2)).Returns(new Fraction(5, 6));
