@@ -1,17 +1,17 @@
 ﻿using System;
 using PhoneShop.Repositories;
+using PhoneShop.Services;
 
-namespace PhoneShop
+namespace PhoneShop;
+
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Phone Shop Tests Demo");
+        Console.WriteLine("Phone Shop Tests Demo");
 
-            var phoneService = new PhoneService(new PhoneRepository());
-            if (phoneService.IsPhoneAvalable("Samsung", "Galaxy S21"))
-                Console.WriteLine("Gotcha!");
-        }
+        var phoneService = new PhoneService(new PhoneRepository());
+        if (phoneService.IsPhoneAvalable("Samsung", "Galaxy S21"))
+            Console.WriteLine("Gotcha!");
     }
 }

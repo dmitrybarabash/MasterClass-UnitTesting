@@ -1,14 +1,13 @@
 ﻿using System;
 
-namespace Thing.Domain
-{
-    // "Real" implementation
-    public class ThingDependency : IThingDependency
-    {
-        public string JoinUpper(string a, string b) =>
-            throw new NotImplementedException();
+namespace Thing.Domain;
 
-        public int Meaning =>
-            throw new NotImplementedException();
-    }
+// "Real" implementation
+public class ThingDependency : IThingDependency
+{
+    public string JoinUpper(string a, string b) =>
+        throw new NotImplementedException();
+
+    public int Meaning =>
+        throw new NotImplementedException();
 }

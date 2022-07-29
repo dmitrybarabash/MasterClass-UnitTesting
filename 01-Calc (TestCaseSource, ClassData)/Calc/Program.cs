@@ -1,13 +1,12 @@
 ﻿using System;
 
-namespace Calc
+namespace Calc;
+
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            var calc = new Calculator();
-            Console.WriteLine(calc.Add(1, 2));
-        }
+        var calc = new Calculator();
+        Console.WriteLine(calc.Add(1, 2));
     }
 }

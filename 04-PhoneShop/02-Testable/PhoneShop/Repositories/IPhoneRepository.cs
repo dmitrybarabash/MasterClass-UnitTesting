@@ -1,14 +1,13 @@
 ﻿using System.Collections.Generic;
-using PhoneShop.Model;
+using PhoneShop.Models;
 
-namespace PhoneShop.Repositories
+namespace PhoneShop.Repositories;
+
+public interface IPhoneRepository
 {
-    public interface IPhoneRepository
-    {
-        IEnumerable<Phone> GetAll();
-        Phone GetById(int id);
-        void Add(Phone phone);
-        void Edit(Phone phone);
-        void Delete(Phone phone);
-    }
+    IEnumerable<Phone> GetAll();
+    Phone GetById(int id);
+    void Add(Phone phone);
+    void Edit(Phone phone);
+    void Delete(Phone phone);
 }

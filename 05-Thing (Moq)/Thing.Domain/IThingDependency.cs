@@ -1,8 +1,7 @@
-﻿namespace Thing.Domain
+﻿namespace Thing.Domain;
+
+public interface IThingDependency
 {
-    public interface IThingDependency
-    {
-        string JoinUpper(string a, string b);
-        int Meaning { get; }
-    }
+    string JoinUpper(string a, string b);
+    int Meaning { get; }
 }
