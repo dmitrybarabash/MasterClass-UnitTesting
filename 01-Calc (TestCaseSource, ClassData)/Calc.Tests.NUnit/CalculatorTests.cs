@@ -17,7 +17,7 @@ public class CalculatorTests
         var actual = calc.Add(1, 2);
 
         // Assert
-        Assert.AreEqual(expected, actual);
+        Assert.That(actual, Is.EqualTo(expected));
     }
 
     [Test]
